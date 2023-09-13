@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
     container_name: docker-react-c
-    image: docker-react-i
+    image: docker-react-i:latest
     build:
       context: .
     ports:
