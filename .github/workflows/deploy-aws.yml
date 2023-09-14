@@ -10,7 +10,8 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
-        with: ${{ secrets.PAT_SECRET}}
+        with:
+          token: ${{ secrets.PAT_SECRET}}
 
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
