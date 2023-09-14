@@ -14,7 +14,6 @@ RUN npm install
 # Copy app files
 COPY . .
 
-
 # Build app
 RUN npm run build
 
