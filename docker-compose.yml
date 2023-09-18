@@ -1,9 +1,8 @@
 version: '3'
 services:
   web:
-    container_name: docker-react-c
-    image: docker-react-i
     build:
       context: .
+      dockerfile: dockerfile
     ports:
       - '80:80'
