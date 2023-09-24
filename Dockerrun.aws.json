@@ -1,9 +1,5 @@
 {
     "AWSEBDockerrunVersion": "1",
-    "Authentication": {
-        "bucket": "docker-login-bucket38572302",
-        "key": "dockercfg"
-      },
     "Image": {
         "Name": "it44822/public:latest",
         "Update": "true"
