@@ -5,7 +5,7 @@
         "key": "dockercfg"
       },
     "Image": {
-        "Name": "public/web-app:latest",
+        "Name": "it44822/public:latest",
         "Update": "true"
     },
     "Ports": [
