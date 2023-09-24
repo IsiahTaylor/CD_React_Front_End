@@ -21,7 +21,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: public/web-app:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/public:latest
       # - name: Get Timestamp
       #   uses: gerred/actions/current-time@master
       #   id: current-time
