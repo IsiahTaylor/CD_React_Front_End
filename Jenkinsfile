@@ -21,17 +21,13 @@ pipeline {
             }
         }
 
-        /* Uncomment the below section when you're ready to run tests */
-        /*
         stage('Run Tests') {
             steps {
                 echo "Running tests..."
-                // Here, you'd run your container in a way that executes your tests.
-                // For a typical React application, it might look something like:
-                sh 'docker run ${DOCKER_IMAGE} npm test'
+                /* For a typical React application using @testing-library/react: */
+                sh 'docker run ${DOCKER_IMAGE} npm test -- src/App.test.tsx'
             }
         }
-        */
     }
 
     post {
