@@ -15,14 +15,11 @@ pipeline {
         }
 
         stage('Build Docker Image') {
-            steps {
-                echo "Building Docker image..."
-                script {
-                    docker.build("${DOCKER_IMAGE}")
-                }
-            }
-        }
-
+    steps {
+        echo "Building Docker image..."
+        sh "docker build -t ${DOCKER_IMAGE} ."
+    }
+}
         // Uncomment the below section when you're ready to run tests
         /*
         stage('Run Tests') {
