@@ -1,4 +1,4 @@
-#test Base image
+# Base image
 FROM node:16-alpine as builder
 
 # Set working directory
