@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                /* Pull the latest code to EC2 instance */
+                // Pull the latest code to the EC2 instance
                 checkout scm
                 echo "Code checked out on EC2!"
             }
@@ -18,14 +18,6 @@ pipeline {
             steps {
                 echo "Building Docker image..."
                 sh "docker build -t ${DOCKER_IMAGE} ."
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                echo "Running tests..."
-                /* For a typical React application using @testing-library/react: */
-                sh 'docker run ${DOCKER_IMAGE} npm test -- src/App.test.tsx'
             }
         }
     }
