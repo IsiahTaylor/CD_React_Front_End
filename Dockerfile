@@ -14,6 +14,9 @@ RUN npm install
 # Copy app files
 COPY . .
 
+# Run tests
+RUN npm test
+
 # Build app
 RUN npm run build
 
@@ -21,7 +24,7 @@ RUN npm run build
 FROM nginx:1.19.0
 
 # Copy build files
-COPY --from=0 /app/build /usr/share/nginx/html
+COPY --from=builder /app/build /usr/share/nginx/html
 
 # Expose port
 EXPOSE 80
