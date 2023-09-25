@@ -1,46 +1,50 @@
 pipeline {
     agent any
 
+    environment {
+        DOCKER_IMAGE = 'reactapp:v1'
+    }
+
     stages {
         stage('Checkout') {
             steps {
+                //pull the latest code to EC2 instance
                 checkout scm
-                echo "Checked out the codetest !"
+                echo "Code checked out on EC2!"
             }
         }
 
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                echo "Simulating a build step..."
-                sh 'echo "Building..."'
+                echo "Building Docker image..."
+                script {
+                    docker.build("${DOCKER_IMAGE}")
+                }
             }
         }
 
-        stage('Test') {
+        // Uncomment the below section when you're ready to run tests
+        /*
+        stage('Run Tests') {
             steps {
-                echo "Simulating tests..."
-                sh 'echo "Testing..."'
+                echo "Running tests..."
+                // Here, you'd run your container in a way that executes your tests. 
+                // For a typical React application, it might look something like:
+                sh 'docker run ${DOCKER_IMAGE} npm test'
             }
         }
-
-        stage('Deploy') {
-            steps {
-                echo "Simulating a deploy step..."
-                sh 'echo "Deploying..."'
-            }
-        }
+        */
     }
 
     post {
         always {
-            echo "This will always run"
+            echo "CI pipeline finished."
         }
         success {
             echo "Build was a success!"
         }
         failure {
-            echo "Build failed."
+            echo "Build failed. Please check the logs for more details."
         }
     }
 }
-
