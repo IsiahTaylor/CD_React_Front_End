@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 checkout scm
-                echo "Checked out the code!"
+                echo "Checked out the codetest !"
             }
         }
 
