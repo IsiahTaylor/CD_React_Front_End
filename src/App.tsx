@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +19,9 @@ function App() {
         >
           Learn React
         </a>
+        <p>
+        api - {`${process.env.REACT_APP_API_KEY}`} 
+        </p>
       </header>
     </div>
   );
