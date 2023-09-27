@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+
+  const api = process.env.REACT_APP_API_KEY;
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +21,9 @@ function App() {
         >
           Learn React
         </a>
+        <p>
+         {api} 
+        </p>
       </header>
     </div>
   );
