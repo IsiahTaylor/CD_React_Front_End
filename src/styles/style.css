@@ -1,0 +1,12 @@
+.background {
+  background: linear-gradient(
+    to bottom,
+    rgb(48, 60, 108) 0%,
+    rgb(244, 151, 108) 100%
+  );
+  align-content: center;
+  background-size: contain;
+  z-index: -1;
+  min-height: 100vh;
+  transition: all .5s linear;
+}
